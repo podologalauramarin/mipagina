@@ -415,6 +415,15 @@
     margin-bottom: 4px;
   }
   .price-tag span{ font-size: 1.1rem; font-weight:700; color: var(--ink-soft); }
+  .price-tag .price-was{
+    display: inline-block;
+    text-decoration: line-through;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #b5443a;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
   .price-note{
     display:inline-block;
     background: var(--accent-light);
@@ -434,6 +443,17 @@
   }
   .price-reasons p{ margin:0; color: var(--ink-soft); }
   .price-reasons strong{ color: var(--ink); }
+  .price-family{
+    margin: 22px auto 0;
+    max-width: 520px;
+    background: var(--accent-light);
+    border: 1px dashed var(--accent);
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-size: 0.95rem;
+    color: var(--accent-dark);
+  }
+  .price-family strong{ color: var(--accent-dark); }
 
   /* GUARANTEE */
   .guarantee{
@@ -791,11 +811,14 @@
       <h2>Inversión</h2>
       <div class="price-box">
         <span class="price-note">Precio de lanzamiento por tiempo limitado — plazas limitadas por tanda</span>
-        <div class="price-tag">200€ <span>/ programa completo</span></div>
+        <div class="price-tag"><span class="price-was">350€</span> 200€ <span>/ programa completo</span></div>
         <p style="color:var(--ink-soft); margin-top:8px;">2 sesiones + informe personalizado + acompañamiento entre sesiones</p>
+        <div class="price-family">
+          <strong>Calzado con Lógica en familia:</strong> si vais a participar varios miembros de la familia en la misma sesión, cada persona adicional suma +50€ — todos en la misma reunión, sin citas por separado.
+        </div>
         <div class="price-reasons">
           <p><strong>No es una guía genérica de internet</strong> con "aquí tienes una lista y suerte". Es un plan hecho para vuestro pie concreto, con seguimiento real de que la elección fue la correcta.</p>
-          <p><strong>Precio de lanzamiento por tiempo limitado:</strong> por ser de las primeras familias en confiar en este programa, entráis a un precio que no se va a repetir. Plazas limitadas por tanda, además: el acompañamiento cercano no es compatible con atender a veinte familias a la vez.</p>
+          <p><strong>Precio de lanzamiento por tiempo limitado:</strong> el programa tiene un valor real de 350€. Por ser de las primeras familias en confiar en él, entráis a 200€ — un precio que no se va a repetir. Plazas limitadas por tanda, además: el acompañamiento cercano no es compatible con atender a veinte familias a la vez.</p>
           <p><strong>Lo que os ahorráis:</strong> plantillas que se repiten cada año, calzado mal comprado una y otra vez "a ciegas", posibles sesiones de fisioterapia el día de mañana por dolores que se pudieron evitar a tiempo. 200€ frente a eso es una cifra pequeña.</p>
         </div>
       </div>
