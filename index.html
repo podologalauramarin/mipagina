@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calzado con Lógica — Elige el calzado correcto para tu familia</title>
+<meta name="description" content="Calzado con Lógica: desde la primera sesión te llevas una guía con modelos exactos y sus enlaces de compra, para ti o para tu familia, sin gastar tiempo, dinero de más ni sentir la culpa de no saber si eliges bien.">
+<style>
+  :root{
+    --bg: #faf7f1;
+    --bg-alt: #f1ece1;
+    --ink: #23302c;
+    --ink-soft: #4c5a54;
+    --accent: #2f6f5e;
+    --accent-dark: #234f43;
+    --accent-light: #e4efe9;
+    --line: #dcd3c3;
+    --white: #ffffff;
+    --radius: 14px;
+    --maxw: 880px;
+    --shadow: 0 8px 24px rgba(35,48,44,0.08);
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  img{ max-width:100%; display:block; }
+
+  .wrap{
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  section{
+    padding: 64px 0;
+  }
+
+  h1,h2,h3{
+    line-height: 1.2;
+    margin: 0 0 16px;
+    font-weight: 800;
+    color: var(--ink);
+  }
+  h2{
+    font-size: clamp(1.5rem, 4vw, 2.1rem);
+    text-align: center;
+  }
+  p{ margin: 0 0 16px; }
+
+  .eyebrow{
+    display:inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+
+  .lead{
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+  }
+  .center{ text-align:center; }
+
+  /* HERO */
+  .hero{
+    background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%);
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero h1{
+    font-size: clamp(2rem, 5.5vw, 3rem);
+    text-align:center;
+    max-width: 760px;
+    margin: 0 auto 20px;
+  }
+  .hero .subtitle{
+    text-align:center;
+    font-size: clamp(1.05rem, 2.6vw, 1.25rem);
+    color: var(--ink-soft);
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .hero-badge{
+    display:block;
+    text-align:center;
+    margin: 0 auto 18px;
+  }
+
+  /* PROBLEM */
+  .quotes{
+    display:grid;
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .quote{
+    background: var(--white);
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+    padding: 20px 24px;
+    box-shadow: var(--shadow);
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  /* BELIEF */
+  .belief{
+    background: var(--accent-dark);
+    color: var(--white);
+  }
+  .belief .wrap{ text-align:center; }
+  .belief h2{
+    color: var(--white);
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    max-width: 700px;
+    margin: 0 auto 14px;
+  }
+  .belief p{
+    color: #d9e8e2;
+    max-width: 620px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+  }
+
+  /* SOLUTION */
+  .solution-card{
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 36px;
+    margin-top: 28px;
+    border: 1px solid var(--line);
+  }
+  .includes{
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+    display: grid;
+    gap: 12px;
+  }
+  .includes li{
+    display:flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 1rem;
+  }
+  .includes li::before{
+    content: "✓";
+    flex: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent-light);
+    color: var(--accent-dark);
+    font-weight: 800;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 0.85rem;
+  }
+
+  /* HOW IT WORKS */
+  .steps{
+    counter-reset: step;
+    display: grid;
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .step{
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 24px 24px 24px 68px;
+    position: relative;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--line);
+  }
+  .step::before{
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: 20px;
+    top: 24px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--white);
+    font-weight: 800;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 0.95rem;
+  }
+  .step h3{
+    font-size: 1.08rem;
+    margin: 0 0 6px;
+  }
+  .step p{
+    margin: 0;
+    color: var(--ink-soft);
+  }
+  .how-note{
+    margin-top: 28px;
+    background: var(--accent-light);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    color: var(--accent-dark);
+    font-size: 1rem;
+  }
+  .how-note strong{ color: var(--accent-dark); }
+
+  /* SOCIAL PROOF */
+  .social{
+    background: var(--bg-alt);
+  }
+  .social-subhead{
+    text-align:center;
+    color: var(--ink-soft);
+    max-width: 560px;
+    margin: -8px auto 0;
+  }
+  .stats-row{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 16px;
+    margin: 32px 0 8px;
+  }
+  .stat-card{
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px 18px;
+    text-align:center;
+    box-shadow: var(--shadow);
+  }
+  .stat-card .stat-num{
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--accent-dark);
+    line-height:1.1;
+  }
+  .stat-card .stat-label{
+    margin-top: 6px;
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+  }
+  .review-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .review-card{
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    box-shadow: var(--shadow);
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    border: 1px solid var(--line);
+  }
+  .review-head{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .avatar{
+    width:42px;height:42px;border-radius:50%;
+    background: var(--accent-light);
+    color: var(--accent-dark);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700; font-size:0.9rem; flex:none;
+  }
+  .avatar.anon{ background:#e7e2d8; color:#8a8272; font-size:1.1rem; }
+  .review-meta .name{ font-weight:700; font-size:0.92rem; }
+  .review-meta .sub{ font-size:0.78rem; color: var(--ink-soft); }
+  .review-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .review-stars{ color:#f5a623; letter-spacing:2px; font-size:0.9rem; }
+  .review-time{ font-size:0.78rem; color: var(--ink-soft); }
+  .review-tag{
+    display:inline-block;
+    background: var(--accent-light);
+    color: var(--accent-dark);
+    font-size: 0.68rem;
+    font-weight:700;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    padding: 3px 9px;
+    border-radius: 999px;
+  }
+  .review-text{
+    color: var(--ink);
+    font-size: 0.96rem;
+    margin:0;
+  }
+
+  .chat-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .chat-card{
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow:hidden;
+    border: 1px solid var(--line);
+  }
+  .chat-label{
+    padding: 14px 18px;
+    font-weight:700;
+    font-size:0.9rem;
+    color: var(--ink);
+    border-bottom: 1px solid var(--line);
+  }
+  .chat-label span{
+    display:block;
+    font-weight:400;
+    font-size:0.78rem;
+    color: var(--ink-soft);
+    margin-top:2px;
+  }
+  .chat-bubbles{
+    background: #e7ded0;
+    padding: 18px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+  .bubble{
+    max-width: 82%;
+    padding: 7px 10px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    line-height:1.35;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.08);
+  }
+  .bubble.in{
+    background: #ffffff;
+    color: var(--ink);
+    margin-right:auto;
+    border-bottom-left-radius:2px;
+  }
+  .bubble.out{
+    background: #d9fdd3;
+    color: var(--ink);
+    margin-left:auto;
+    border-bottom-right-radius:2px;
+  }
+  .bubble .time{
+    display:block;
+    text-align:right;
+    font-size:0.65rem;
+    color: #7c8a83;
+    margin-top:2px;
+  }
+
+  .photo-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .photo-grid figure{ margin:0; }
+  .photo-grid img{
+    width:100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display:block;
+  }
+  .photo-grid figcaption{
+    margin-top:10px;
+    font-size:0.85rem;
+    color: var(--ink-soft);
+    text-align:center;
+  }
+
+  /* PRICE */
+  .price-box{
+    background: var(--white);
+    border: 2px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 40px 32px;
+    text-align:center;
+    margin-top: 24px;
+    box-shadow: var(--shadow);
+  }
+  .price-tag{
+    font-size: clamp(2.4rem, 8vw, 3.2rem);
+    font-weight: 900;
+    color: var(--accent-dark);
+    margin-bottom: 4px;
+  }
+  .price-tag span{ font-size: 1.1rem; font-weight:700; color: var(--ink-soft); }
+  .price-note{
+    display:inline-block;
+    background: var(--accent-light);
+    color: var(--accent-dark);
+    font-weight:700;
+    font-size: 0.85rem;
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+  }
+  .price-reasons{
+    text-align:left;
+    max-width: 620px;
+    margin: 24px auto 0;
+    display:grid;
+    gap:14px;
+  }
+  .price-reasons p{ margin:0; color: var(--ink-soft); }
+  .price-reasons strong{ color: var(--ink); }
+
+  /* GUARANTEE */
+  .guarantee{
+    background: var(--accent-light);
+  }
+  .guarantee-box{
+    max-width: 680px;
+    margin: 24px auto 0;
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 32px;
+    text-align:center;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--line);
+  }
+  .guarantee-box .badge{
+    width:56px;height:56px;
+    border-radius:50%;
+    background: var(--accent);
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.6rem;
+    margin: 0 auto 16px;
+  }
+  .guarantee-box p{ font-size: 1.05rem; color: var(--ink); margin:0; }
+
+  /* FAQ */
+  .faq-list{
+    margin-top: 28px;
+    display:grid;
+    gap: 12px;
+  }
+  .faq-item{
+    background: var(--white);
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    overflow: hidden;
+  }
+  .faq-question{
+    width:100%;
+    text-align:left;
+    background:none;
+    border:none;
+    padding: 18px 20px;
+    font-size: 1rem;
+    font-weight:700;
+    color: var(--ink);
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 16px;
+    font-family: inherit;
+  }
+  .faq-question .icon{
+    flex:none;
+    width: 22px;
+    height: 22px;
+    border-radius:50%;
+    background: var(--accent-light);
+    color: var(--accent-dark);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;
+    transition: transform 0.25s ease;
+    font-size: 0.9rem;
+  }
+  .faq-item.open .faq-question .icon{ transform: rotate(45deg); }
+  .faq-answer{
+    max-height: 0;
+    overflow:hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 20px;
+    color: var(--ink-soft);
+  }
+  .faq-item.open .faq-answer{
+    padding: 0 20px 20px;
+  }
+
+  /* CTA */
+  .cta{
+    background: var(--accent-dark);
+    color: var(--white);
+    text-align:center;
+  }
+  .cta h2{ color: var(--white); }
+  .cta p.lead{ color: #cfe3db; }
+  .cta-btn{
+    display:inline-flex;
+    align-items:center;
+    gap: 10px;
+    background: #25D366;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.15rem;
+    padding: 18px 40px;
+    border-radius: 999px;
+    text-decoration:none;
+    margin-top: 20px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .cta-btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgba(0,0,0,0.3);
+  }
+  .cta-note{
+    margin-top: 18px;
+    font-size: 0.85rem;
+    color: #a9c4ba;
+  }
+
+  footer{
+    padding: 28px 0;
+    text-align:center;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    background: var(--bg);
+  }
+
+  @media (max-width: 600px){
+    section{ padding: 48px 0; }
+    .solution-card{ padding: 26px 20px; }
+    .step{ padding: 22px 18px 22px 60px; }
+    .step::before{ left:14px; top:18px; }
+    .price-box{ padding: 30px 20px; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <span class="eyebrow hero-badge">Al cuidador de la familia</span>
+      <h1>Calzado con Lógica: desde la primera sesión te llevas una guía con modelos exactos y sus enlaces de compra, para ti o para tu familia</h1>
+      <p class="subtitle">Sin gastar tiempo, dinero de más ni sentir la culpa de no saber si eliges bien.</p>
+    </div>
+  </header>
+
+  <section id="problema">
+    <div class="wrap">
+      <h2>¿Te suena esto?</h2>
+      <div class="quotes">
+        <div class="quote">"No sabes qué zapato comprarle a tu hijo."</div>
+        <div class="quote">"El pediatra te dice que ya se corregirá."</div>
+        <div class="quote">"Los abuelos dicen que el pie bien sujeto y con unas buenas plantillas."</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="belief">
+    <div class="wrap">
+      <span class="eyebrow" style="background:rgba(255,255,255,0.12); color:#fff;">La creencia que hay que romper</span>
+      <h2>No todo se arregla con plantillas</h2>
+      <p>El calzado adecuado no es una recomendación puntual ni un accesorio que "corrige" solo. Es un criterio que tienes que aprender a aplicar tú, cada vez que compras un par nuevo.</p>
+    </div>
+  </section>
+
+  <section id="solucion">
+    <div class="wrap">
+      <h2>La solución: Calzado con Lógica</h2>
+      <p class="lead center">2 sesiones conmigo y un informe personalizado, para que sepas elegir — para siempre — el calzado que le viene bien a cada miembro de tu familia. Para tus hijos, para ti, o para todos juntos.</p>
+      <div class="solution-card">
+        <h3 style="margin-bottom:4px;">Qué incluye</h3>
+        <ul class="includes">
+          <li>2 sesiones por videollamada, con toda la familia junta si lo necesitáis.</li>
+          <li>Reconstrucción de la historia del pie de cada persona: pisada, herencia, perfil sensorial y necesidades reales.</li>
+          <li>Los criterios clínicos para elegir cualquier calzado — no solo una marca puntual.</li>
+          <li>Una guía personalizada con marcas y modelos concretos, con enlaces listos para comprar.</li>
+          <li>Segunda sesión de revisión con el calzado ya en uso, para comprobar la adaptación.</li>
+          <li>Acompañamiento entre sesiones: dudas, fotos, vídeos y ejercicios según lo que necesite tu caso.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona" class="social">
+    <div class="wrap">
+      <h2>Cómo funciona</h2>
+      <div class="steps">
+        <div class="step">
+          <h3>Reconstruyo la historia de tu pie o el de tu hijo</h3>
+          <p>En la primera sesión analizamos cómo pisa, cómo se mueve, qué ha heredado, cuál es su perfil sensorial y sus necesidades reales — y también qué es lo que te preocupa a la hora de elegir calzado.</p>
+        </div>
+        <div class="step">
+          <h3>Te doy los criterios, no solo una marca</h3>
+          <p>Aprendes a elegir cualquier calzado con lógica clínica: un criterio que te sirve para siempre, no una recomendación puntual.</p>
+        </div>
+        <div class="step">
+          <h3>Planteamos la transición sin prisa</h3>
+          <p>Del calzado convencional a uno que libere los pies, con opciones en todos los rangos de precio, sin alterar vuestra rutina familiar.</p>
+        </div>
+        <div class="step">
+          <h3>Te llega tu guía personalizada</h3>
+          <p>Al terminar la primera sesión, recibes las marcas y modelos concretos que os vienen bien, listos para elegir y comprar sin dar más vueltas.</p>
+        </div>
+        <div class="step">
+          <h3>Comprobamos que todo va bien con el calzado en casa</h3>
+          <p>En la segunda sesión, ya con el proceso de compra hecho, revisamos juntos cómo se ha adaptado y resolvemos cualquier duda que haya quedado.</p>
+        </div>
+        <div class="step">
+          <h3>Te acompaño mientras lo necesites</h3>
+          <p>Entre sesiones tienes un acompañamiento real y personalizado — ejercicios, fotos o vídeos según lo que necesite tu caso — y un sitio donde preguntarme en cuanto te asalte una duda.</p>
+        </div>
+      </div>
+      <div class="how-note">
+        <strong>Esto no es una guía de calzados y marcas y punto.</strong> Es entender de verdad cómo se forma y se cuida el pie, para que elegir calzado deje de costaros trabajo en el futuro — con criterio, sabiendo el porqué de cada necesidad.
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonios">
+    <div class="wrap">
+      <h2>Familias que ya han dejado de dudar</h2>
+      <p class="social-subhead">Reseñas reales de Google y conversaciones con pacientes, tal cual las escribieron.</p>
+
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-num">19.000</div>
+          <div class="stat-label">familias siguen sus consejos de calzado y salud en Instagram</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">236</div>
+          <div class="stat-label">familias en su comunidad de WhatsApp, interesadas por los pies de sus hijos</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">132</div>
+          <div class="stat-label">reseñas reales en Google, todas con 5 estrellas</div>
+        </div>
+      </div>
+
+      <div class="review-grid">
+
+        <div class="review-card">
+          <div class="review-head">
+            <div class="avatar">M</div>
+            <div class="review-meta">
+              <div class="name">Milagros Salazar Molina</div>
+              <div class="sub">6 reseñas</div>
+            </div>
+          </div>
+          <div class="review-top">
+            <span class="review-stars">★★★★★</span>
+            <span class="review-time">hace 3 días</span>
+          </div>
+          <p class="review-text">Soy paciente de Laura desde hace más de un año y estoy encantada. Su consulta se ha convertido en algo esencial para el cuidado de mis pies. Es una podóloga muy actualizada y se implica en el caso de cada paciente. Sin duda la recomiendo.</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-head">
+            <div class="avatar">M</div>
+            <div class="review-meta">
+              <div class="name">Marisa Marisa</div>
+              <div class="sub">8 reseñas</div>
+            </div>
+          </div>
+          <div class="review-top">
+            <span class="review-stars">★★★★★</span>
+            <span class="review-time">hace 8 meses</span>
+          </div>
+          <p class="review-text">Nuestra experiencia con Laura maravillosa! Tengo una niña de 9 años, la cual lleva años sufriendo dolores de rodilla, espalda, todo el día muy cansada, tanto que la limitaba realizar cualquier actividad física porque siempre terminaba con dolor sobre todo de rodillas y tomando antiinflamatorio prácticamente casi a diario. Después de llevarla a diferentes médicos, siempre me decían lo mismo, tiene dolores de crecimiento, que estaba todo bien. Desesperada me puse a buscar un podólogo pediatra, porque yo la veía andando raro y de casualidad encontré a Laura por Instagram, y no puedo estar más agradecida. Como explica de bien todo, el cariño que le pone y el buen trabajo que hace. Le hizo un estudio de la pisada y le puso un tratamiento personalizado y hemos vuelto a consulta después de 1 mes. Mi niña es completamente otra tan solo con un mes que lleva siguiendo las recomendaciones que nos dio. Está más activa, realiza su deporte con normalidad y lo mejor que no se queja de dolor. Espero que nuestra experiencia le sirva a alguna persona que pase por lo mismo, y sobre todo que no dejen pasar tanto tiempo como nos sucedió a nosotros. Muchas gracias Laura!</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-head">
+            <div class="avatar">C</div>
+            <div class="review-meta">
+              <div class="name">Congelados Prebamar</div>
+              <div class="sub">3 reseñas</div>
+            </div>
+          </div>
+          <div class="review-top">
+            <span class="review-stars">★★★★★</span>
+            <span class="review-time">hace un año</span>
+          </div>
+          <p class="review-text">Fuimos a Laura para una segunda opinión y solo puedo estar agradecida con ella, su trato, sus explicaciones nos dejaron muy tranquilos para nuestro peque, nos ha dado tratamiento y además ayuda en todo momento transmitiéndonos ternura además de conocimientos. Solo puedo darle las gracias.</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-head">
+            <div class="avatar anon">✓</div>
+            <div class="review-meta">
+              <div class="name">Paciente de la clínica</div>
+              <div class="sub">Reseña de Google</div>
+            </div>
+          </div>
+          <div class="review-top">
+            <span class="review-stars">★★★★★</span>
+            <span class="review-time">hace 4 días</span>
+          </div>
+          <p class="review-text">Gracias a Laura Marín, podóloga de la clínica, por su simpatía, calidad humana y profesionalidad. Hemos pasado por allí varios miembros de la familia y no podemos estar más contentos. Lo recomendaría una y otra vez.</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-head">
+            <div class="avatar">J</div>
+            <div class="review-meta">
+              <div class="name">Jano Cabello</div>
+              <div class="sub">Local Guide · 29 reseñas · 1 foto</div>
+            </div>
+          </div>
+          <div class="review-top">
+            <span class="review-stars">★★★★★</span>
+            <span class="review-time">ayer <span class="review-tag">Nuevo</span></span>
+          </div>
+          <p class="review-text">Contraté el servicio online de Laura de asesoramiento de calzado para viajar a Japón. Venía de un viaje de 5 días a Nueva York en el que sufrí fascitis plantar y tenía un miedo horrible a que me volviera a ocurrir en los 15 días en Japón. Laura me preparó una guía y me asesoró en el calzado que debería llevar. De no ser por ella... hubiese estado jodido. Me compré unas zapatillas perfectas, me mandó una guía de cómo cuidar mis pies y qué ejercicios hacer si sentía dolor. Impresionante. Gracias Laura!</p>
+        </div>
+
+      </div>
+
+      <div class="chat-grid">
+        <div class="chat-card">
+          <div class="chat-label">Lourdes<span>Le escribe a Laura desde Nueva York</span></div>
+          <div class="chat-bubbles">
+            <div class="bubble out">Hola cielo!<span class="time">16:36 ✓✓</span></div>
+            <div class="bubble out">Cómo vas en New York con el calzado???<span class="time">16:36 ✓✓</span></div>
+            <div class="bubble in">Hola!!!!<span class="time">16:53</span></div>
+            <div class="bubble in">Suuuper bien!<span class="time">16:53</span></div>
+            <div class="bubble in">Ya me duelen los pies pero es de tanto andar<span class="time">16:53</span></div>
+            <div class="bubble in">Gracias Laura por preocuparte<span class="time">16:53</span></div>
+            <div class="bubble out">pues me alegro un montón!! Que el dolor de pies sea de andar, no de no poder hacerlo.<span class="time">16:54 ✓✓</span></div>
+            <div class="bubble in">💪 siiiiii<span class="time">16:54</span></div>
+          </div>
+        </div>
+
+        <div class="chat-card">
+          <div class="chat-label">Hermano de Fabrina<span>Fabrina lo trajo a consulta y compartió esto con Laura</span></div>
+          <div class="chat-bubbles">
+            <div class="bubble in">Fabri estoy tan contento, hoy es el primer día después de mucho tiempo que no me duelen los pies<span class="time">21:36</span></div>
+            <div class="bubble out">❤️<span class="time">21:36</span></div>
+            <div class="bubble in">Gracias!!!!<span class="time">21:36</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="photo-grid">
+        <figure>
+          <img src="img/laura-consulta-nino.jpg" alt="Laura valorando el pie de un niño en consulta, con la madre presente">
+          <figcaption>En consulta, valorando la pisada de un peque</figcaption>
+        </figure>
+        <figure>
+          <img src="img/laura-explicando-pie.jpg" alt="Laura explicando la anatomía del pie con un modelo anatómico">
+          <figcaption>Explicando la anatomía del pie a una familia</figcaption>
+        </figure>
+        <figure>
+          <img src="img/laura-pizarra.jpg" alt="Laura explicando en una pizarra la diferencia entre calzado convencional y calzado fisiológico">
+          <figcaption>Explicando por qué no todo calzado sirve igual</figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="precio" class="social">
+    <div class="wrap">
+      <h2>Inversión</h2>
+      <div class="price-box">
+        <span class="price-note">Precio de lanzamiento por tiempo limitado — plazas limitadas por tanda</span>
+        <div class="price-tag">200€ <span>/ programa completo</span></div>
+        <p style="color:var(--ink-soft); margin-top:8px;">2 sesiones + informe personalizado + acompañamiento entre sesiones</p>
+        <div class="price-reasons">
+          <p><strong>No es una guía genérica de internet</strong> con "aquí tienes una lista y suerte". Es un plan hecho para vuestro pie concreto, con seguimiento real de que la elección fue la correcta.</p>
+          <p><strong>Precio de lanzamiento por tiempo limitado:</strong> por ser de las primeras familias en confiar en este programa, entráis a un precio que no se va a repetir. Plazas limitadas por tanda, además: el acompañamiento cercano no es compatible con atender a veinte familias a la vez.</p>
+          <p><strong>Lo que os ahorráis:</strong> plantillas que se repiten cada año, calzado mal comprado una y otra vez "a ciegas", posibles sesiones de fisioterapia el día de mañana por dolores que se pudieron evitar a tiempo. 200€ frente a eso es una cifra pequeña.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="garantia" class="guarantee">
+    <div class="wrap">
+      <h2>Garantía</h2>
+      <div class="guarantee-box">
+        <div class="badge">✓</div>
+        <p>Si completas las 2 sesiones y las tareas entre medias, y no encontramos juntos un calzado adecuado para tu familia, te devuelvo el dinero.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2>Preguntas frecuentes</h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>¿Puedo hacerlo solo para mí, sin mis hijos?</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer"><p>Sí. El programa funciona igual si vienes tú solo, si venís tú y tus hijos, o toda la familia junta.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>Si vamos varios, ¿tenemos sesiones separadas?</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer"><p>No. Todos los que participéis vais en la misma reunión, no se reparten citas por días distintos.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>¿Y si mi hijo (o yo) ya usa plantillas?</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer"><p>Buscamos el calzado adaptado a la patología o tratamiento actual, según la edad y la historia clínica. No sustituyo a tu podólogo si hay tratamiento en curso, trabajo en la misma dirección.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>¿Sirve si vivo lejos?</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer"><p>Sí, todo el programa es online por videollamada.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>¿Cómo valoras el pie de mi hijo a distancia, sin verlo en persona?</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer"><p>A través de tres cosas: la historia del pie (cómo pisa, qué ha heredado, qué te preocupa a ti), fotos y vídeos que me mandáis siguiendo mis indicaciones — de pie, en apoyo, caminando — y la conversación en la sesión, donde te voy preguntando y observando en directo por videollamada. No es lo mismo que tenerlo delante en consulta, y te lo digo con honestidad: si en algún momento detecto algo que necesita exploración física o una prueba que no puedo hacer a distancia, te lo diré y te derivaré a valoración presencial. Pero para lo que trabajamos aquí — criterio de elección de calzado, patrón de pisada, desarrollo del pie — la evaluación visual guiada es suficiente, y es el mismo método que ya uso con familias de fuera de España.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>¿Y si el calzado que elegimos no le viene bien?</span>
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer"><p>En la segunda sesión te pido que me mandes o me enseñes en directo un vídeo de tu hijo caminando con el calzado puesto — así veo si el pie se mueve con libertad dentro del zapato o si hay algo que lo está frenando. Durante el programa te doy las herramientas para que sepas medir tú misma el largo y el ancho del pie de tu hijo, de forma que no dudes a la hora de elegir el número: por delante debe sobrar entre 0,8 y 1 cm, y el ancho tiene que dejar que los dedos se muevan sin que el pie se deslice hacia la puntera al caminar. Son comprobaciones que aprendes a hacer tú, para repetirlas cada vez que le compres calzado sin necesidad de mí. Si algo no encaja — le queda grande, pequeño, o el modelo no es el que su pie necesita — lo detectamos ahí y buscamos juntos la alternativa correcta. Y si al final del proceso no damos con el calzado adecuado, entra la garantía: te devuelvo el dinero.</p></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="reserva">
+    <div class="wrap">
+      <h2>Deja de dudar cada vez que tienes que comprarle zapatos</h2>
+      <p class="lead">Reserva tu plaza y en la primera sesión ya tendrás tu guía personalizada.</p>
+      <a class="cta-btn" href="https://wa.me/34633898063" target="_blank" rel="noopener">
+        RESERVA PLAZA
+      </a>
+      <div class="cta-note">Plazas limitadas por tanda. Te responderé por WhatsApp.</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">Calzado con Lógica</div>
+  </footer>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.closest('.faq-item');
+      var answer = item.querySelector('.faq-answer');
+      var isOpen = item.classList.contains('open');
+
+      document.querySelectorAll('.faq-item.open').forEach(function (openItem) {
+        if (openItem !== item) {
+          openItem.classList.remove('open');
+          openItem.querySelector('.faq-answer').style.maxHeight = null;
+        }
+      });
+
+      if (isOpen) {
+        item.classList.remove('open');
+        answer.style.maxHeight = null;
+      } else {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
