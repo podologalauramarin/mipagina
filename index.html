@@ -7,18 +7,24 @@
 <meta name="description" content="Calzado con Lógica: desde la primera sesión te llevas una guía con modelos exactos y sus enlaces de compra, para ti o para tu familia, sin gastar tiempo, dinero de más ni sentir la culpa de no saber si eliges bien.">
 <style>
   :root{
-    --bg: #faf7f1;
-    --bg-alt: #f1ece1;
-    --ink: #23302c;
-    --ink-soft: #4c5a54;
-    --accent: #2f6f5e;
-    --accent-dark: #234f43;
-    --accent-light: #e4efe9;
-    --line: #dcd3c3;
+    --bg: #fdf8f6;
+    --bg-alt: #faeef1;
+    --ink: #4a4150;
+    --ink-soft: #8a7e8c;
+    --accent: #d98aa8;
+    --accent-dark: #a35d78;
+    --accent-light: #f7e3ea;
+    --lilac: #b9a4dc;
+    --lilac-dark: #6b529c;
+    --lilac-light: #efe9f8;
+    --yellow: #e8c25a;
+    --yellow-dark: #8a6d1f;
+    --yellow-light: #fbf3d9;
+    --line: #f0dee3;
     --white: #ffffff;
     --radius: 14px;
     --maxw: 880px;
-    --shadow: 0 8px 24px rgba(35,48,44,0.08);
+    --shadow: 0 8px 24px rgba(163,93,120,0.10);
   }
 
   *{ box-sizing: border-box; }
@@ -129,7 +135,7 @@
     margin: 0 auto 14px;
   }
   .belief p{
-    color: #d9e8e2;
+    color: #f3d9e3;
     max-width: 620px;
     margin: 0 auto;
     font-size: 1.05rem;
@@ -163,8 +169,8 @@
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background: var(--accent-light);
-    color: var(--accent-dark);
+    background: var(--lilac-light);
+    color: var(--lilac-dark);
     font-weight: 800;
     display:flex;
     align-items:center;
@@ -252,6 +258,8 @@
     color: var(--accent-dark);
     line-height:1.1;
   }
+  .stat-card:nth-child(2) .stat-num{ color: var(--lilac-dark); }
+  .stat-card:nth-child(3) .stat-num{ color: var(--yellow-dark); }
   .stat-card .stat-label{
     margin-top: 6px;
     font-size: 0.88rem;
@@ -285,7 +293,9 @@
     display:flex;align-items:center;justify-content:center;
     font-weight:700; font-size:0.9rem; flex:none;
   }
-  .avatar.anon{ background:#e7e2d8; color:#8a8272; font-size:1.1rem; }
+  .review-card:nth-child(2) .avatar{ background: var(--lilac-light); color: var(--lilac-dark); }
+  .review-card:nth-child(3) .avatar{ background: var(--yellow-light); color: var(--yellow-dark); }
+  .avatar.anon{ background:#efe6e9; color:#9c8a95; font-size:1.1rem; }
   .review-meta .name{ font-weight:700; font-size:0.92rem; }
   .review-meta .sub{ font-size:0.78rem; color: var(--ink-soft); }
   .review-top{
@@ -420,7 +430,7 @@
     text-decoration: line-through;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #b5443a;
+    color: #b56a82;
     margin-right: 6px;
     vertical-align: middle;
   }
@@ -457,7 +467,7 @@
 
   /* GUARANTEE */
   .guarantee{
-    background: var(--accent-light);
+    background: var(--lilac-light);
   }
   .guarantee-box{
     max-width: 680px;
@@ -513,8 +523,8 @@
     width: 22px;
     height: 22px;
     border-radius:50%;
-    background: var(--accent-light);
-    color: var(--accent-dark);
+    background: var(--yellow-light);
+    color: var(--yellow-dark);
     display:flex;align-items:center;justify-content:center;
     font-weight:800;
     transition: transform 0.25s ease;
@@ -539,7 +549,7 @@
     text-align:center;
   }
   .cta h2{ color: var(--white); }
-  .cta p.lead{ color: #cfe3db; }
+  .cta p.lead{ color: #f3d9e3; }
   .cta-btn{
     display:inline-flex;
     align-items:center;
@@ -562,7 +572,7 @@
   .cta-note{
     margin-top: 18px;
     font-size: 0.85rem;
-    color: #a9c4ba;
+    color: #d9b3c2;
   }
 
   footer{
