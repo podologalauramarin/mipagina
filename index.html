@@ -122,6 +122,62 @@
     color: var(--ink);
   }
 
+  /* LEAD MAGNET */
+  .leadmagnet{
+    background: var(--bg-alt);
+  }
+  .leadmagnet-card{
+    max-width: 640px;
+    margin: 0 auto;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 40px 36px;
+    text-align: center;
+  }
+  .leadmagnet-card h2{ margin-bottom: 10px; }
+  .leadmagnet-card .lead{ margin-bottom: 22px; }
+  .leadmagnet-stages{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap: 10px;
+    margin-bottom: 26px;
+  }
+  .leadmagnet-stages span{
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 999px;
+  }
+  .leadmagnet-stages span:nth-child(1){ background: var(--accent-light); color: var(--accent-dark); }
+  .leadmagnet-stages span:nth-child(2){ background: var(--yellow-light); color: var(--yellow-dark); }
+  .leadmagnet-stages span:nth-child(3){ background: var(--lilac-light); color: var(--lilac-dark); }
+  .leadmagnet-btn{
+    display:inline-flex;
+    align-items:center;
+    gap: 10px;
+    background: var(--accent-dark);
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.05rem;
+    padding: 16px 34px;
+    border-radius: 999px;
+    text-decoration:none;
+    box-shadow: 0 10px 24px rgba(163,93,120,0.28);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .leadmagnet-btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(163,93,120,0.34);
+  }
+  .leadmagnet-note{
+    margin: 14px 0 0;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+  }
+
   /* BELIEF */
   .belief{
     background: var(--accent-dark);
@@ -609,6 +665,23 @@
         <div class="quote">"No sabes qué zapato comprarle a tu hijo."</div>
         <div class="quote">"El pediatra te dice que ya se corregirá."</div>
         <div class="quote">"Los abuelos dicen que el pie bien sujeto y con unas buenas plantillas."</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="leadmagnet" id="guia-gratis">
+    <div class="wrap">
+      <div class="leadmagnet-card">
+        <span class="eyebrow">Guía gratuita</span>
+        <h2>¿En qué etapa está el pie de tu hijo?</h2>
+        <p class="lead">Antes de comprarle otro zapato, descubre qué necesita su pie ahora mismo — según la etapa exacta de su desarrollo, no según su edad en años.</p>
+        <div class="leadmagnet-stages">
+          <span>Etapa 1 · Pre-andantes</span>
+          <span>Etapa 2 · Primeros pasos</span>
+          <span>Etapa 3 · Andantes</span>
+        </div>
+        <a class="leadmagnet-btn" href="descargas/guia-etapas-del-pie-laura-marin.pdf" target="_blank" rel="noopener">Descargar guía gratis</a>
+        <p class="leadmagnet-note">PDF gratuito · Sin registro · Descarga inmediata</p>
       </div>
     </div>
   </section>
