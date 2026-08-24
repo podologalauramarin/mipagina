@@ -356,37 +356,37 @@
   }
   .review-grid{
     display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-    gap: 20px;
-    margin-top: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 14px;
+    margin-top: 28px;
   }
   .review-card{
     background: var(--white);
-    border-radius: var(--radius);
-    padding: 22px 24px;
-    box-shadow: var(--shadow);
+    border-radius: 12px;
+    padding: 16px 18px;
+    box-shadow: 0 3px 10px rgba(163,93,120,0.06);
     display:flex;
     flex-direction:column;
-    gap:10px;
+    gap:7px;
     border: 1px solid var(--line);
   }
   .review-head{
     display:flex;
     align-items:center;
-    gap:12px;
+    gap:10px;
   }
   .avatar{
-    width:42px;height:42px;border-radius:50%;
+    width:32px;height:32px;border-radius:50%;
     background: var(--accent-light);
     color: var(--accent-dark);
     display:flex;align-items:center;justify-content:center;
-    font-weight:700; font-size:0.9rem; flex:none;
+    font-weight:700; font-size:0.76rem; flex:none;
   }
   .review-card:nth-child(2) .avatar{ background: var(--lilac-light); color: var(--lilac-dark); }
   .review-card:nth-child(3) .avatar{ background: var(--yellow-light); color: var(--yellow-dark); }
-  .avatar.anon{ background:#efe6e9; color:#9c8a95; font-size:1.1rem; }
-  .review-meta .name{ font-weight:700; font-size:0.92rem; }
-  .review-meta .sub{ font-size:0.78rem; color: var(--ink-soft); }
+  .avatar.anon{ background:#efe6e9; color:#9c8a95; font-size:0.95rem; }
+  .review-meta .name{ font-weight:700; font-size:0.8rem; }
+  .review-meta .sub{ font-size:0.68rem; color: var(--ink-soft); }
   .review-top{
     display:flex;
     align-items:center;
@@ -394,65 +394,90 @@
     gap:10px;
     flex-wrap:wrap;
   }
-  .review-stars{ color:#f5a623; letter-spacing:2px; font-size:0.9rem; }
-  .review-time{ font-size:0.78rem; color: var(--ink-soft); }
+  .review-stars{ color:#f5a623; letter-spacing:1px; font-size:0.78rem; }
+  .review-time{ font-size:0.68rem; color: var(--ink-soft); }
   .review-tag{
     display:inline-block;
     background: var(--accent-light);
     color: var(--accent-dark);
-    font-size: 0.68rem;
+    font-size: 0.6rem;
     font-weight:700;
     letter-spacing:0.04em;
     text-transform:uppercase;
-    padding: 3px 9px;
+    padding: 2px 8px;
     border-radius: 999px;
   }
   .review-text{
     color: var(--ink);
-    font-size: 0.96rem;
+    font-size: 0.82rem;
+    line-height: 1.5;
     margin:0;
+  }
+  .review-text.clamped{
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .review-more{
+    align-self:flex-start;
+    margin-top: -2px;
+    background:none;
+    border:none;
+    padding:0;
+    color: var(--accent-dark);
+    font-weight:700;
+    font-size: 0.76rem;
+    text-decoration: underline;
+    cursor:pointer;
+    font-family: inherit;
   }
 
   .chat-grid{
     display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-    gap: 20px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 12px;
+    margin-top: 28px;
+    max-width: 560px;
+    margin-left:auto;
+    margin-right:auto;
   }
   .chat-card{
     background: var(--white);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(163,93,120,0.06);
     overflow:hidden;
     border: 1px solid var(--line);
   }
   .chat-label{
-    padding: 14px 18px;
+    padding: 8px 11px;
     font-weight:700;
-    font-size:0.9rem;
+    font-size:0.7rem;
     color: var(--ink);
     border-bottom: 1px solid var(--line);
   }
   .chat-label span{
     display:block;
     font-weight:400;
-    font-size:0.78rem;
+    font-size:0.62rem;
     color: var(--ink-soft);
-    margin-top:2px;
+    margin-top:1px;
   }
   .chat-bubbles{
     background: #e7ded0;
-    padding: 18px;
+    padding: 10px;
     display:flex;
     flex-direction:column;
-    gap:6px;
+    gap:4px;
+    max-height: 220px;
+    overflow-y: auto;
   }
   .bubble{
     max-width: 82%;
-    padding: 7px 10px;
-    border-radius: 8px;
-    font-size: 0.88rem;
-    line-height:1.35;
+    padding: 5px 8px;
+    border-radius: 7px;
+    font-size: 0.68rem;
+    line-height:1.3;
     box-shadow: 0 1px 1px rgba(0,0,0,0.08);
   }
   .bubble.in{
@@ -470,29 +495,29 @@
   .bubble .time{
     display:block;
     text-align:right;
-    font-size:0.65rem;
+    font-size:0.6rem;
     color: #7c8a83;
     margin-top:2px;
   }
 
   .photo-grid{
     display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-    gap: 20px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+    gap: 14px;
+    margin-top: 28px;
   }
   .photo-grid figure{ margin:0; }
   .photo-grid img{
     width:100%;
-    height: 280px;
+    height: 190px;
     object-fit: cover;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(163,93,120,0.06);
     display:block;
   }
   .photo-grid figcaption{
-    margin-top:10px;
-    font-size:0.85rem;
+    margin-top:8px;
+    font-size:0.76rem;
     color: var(--ink-soft);
     text-align:center;
   }
@@ -817,7 +842,7 @@
             <span class="review-stars">★★★★★</span>
             <span class="review-time">hace 3 días</span>
           </div>
-          <p class="review-text">Soy paciente de Laura desde hace más de un año y estoy encantada. Su consulta se ha convertido en algo esencial para el cuidado de mis pies. Es una podóloga muy actualizada y se implica en el caso de cada paciente. Sin duda la recomiendo.</p>
+          <p class="review-text clamped">Soy paciente de Laura desde hace más de un año y estoy encantada. Su consulta se ha convertido en algo esencial para el cuidado de mis pies. Es una podóloga muy actualizada y se implica en el caso de cada paciente. Sin duda la recomiendo.</p>
         </div>
 
         <div class="review-card">
@@ -832,7 +857,7 @@
             <span class="review-stars">★★★★★</span>
             <span class="review-time">hace 8 meses</span>
           </div>
-          <p class="review-text">Nuestra experiencia con Laura maravillosa! Tengo una niña de 9 años, la cual lleva años sufriendo dolores de rodilla, espalda, todo el día muy cansada, tanto que la limitaba realizar cualquier actividad física porque siempre terminaba con dolor sobre todo de rodillas y tomando antiinflamatorio prácticamente casi a diario. Después de llevarla a diferentes médicos, siempre me decían lo mismo, tiene dolores de crecimiento, que estaba todo bien. Desesperada me puse a buscar un podólogo pediatra, porque yo la veía andando raro y de casualidad encontré a Laura por Instagram, y no puedo estar más agradecida. Como explica de bien todo, el cariño que le pone y el buen trabajo que hace. Le hizo un estudio de la pisada y le puso un tratamiento personalizado y hemos vuelto a consulta después de 1 mes. Mi niña es completamente otra tan solo con un mes que lleva siguiendo las recomendaciones que nos dio. Está más activa, realiza su deporte con normalidad y lo mejor que no se queja de dolor. Espero que nuestra experiencia le sirva a alguna persona que pase por lo mismo, y sobre todo que no dejen pasar tanto tiempo como nos sucedió a nosotros. Muchas gracias Laura!</p>
+          <p class="review-text clamped">Nuestra experiencia con Laura maravillosa! Tengo una niña de 9 años, la cual lleva años sufriendo dolores de rodilla, espalda, todo el día muy cansada, tanto que la limitaba realizar cualquier actividad física porque siempre terminaba con dolor sobre todo de rodillas y tomando antiinflamatorio prácticamente casi a diario. Después de llevarla a diferentes médicos, siempre me decían lo mismo, tiene dolores de crecimiento, que estaba todo bien. Desesperada me puse a buscar un podólogo pediatra, porque yo la veía andando raro y de casualidad encontré a Laura por Instagram, y no puedo estar más agradecida. Como explica de bien todo, el cariño que le pone y el buen trabajo que hace. Le hizo un estudio de la pisada y le puso un tratamiento personalizado y hemos vuelto a consulta después de 1 mes. Mi niña es completamente otra tan solo con un mes que lleva siguiendo las recomendaciones que nos dio. Está más activa, realiza su deporte con normalidad y lo mejor que no se queja de dolor. Espero que nuestra experiencia le sirva a alguna persona que pase por lo mismo, y sobre todo que no dejen pasar tanto tiempo como nos sucedió a nosotros. Muchas gracias Laura!</p>
         </div>
 
         <div class="review-card">
@@ -847,7 +872,7 @@
             <span class="review-stars">★★★★★</span>
             <span class="review-time">hace un año</span>
           </div>
-          <p class="review-text">Fuimos a Laura para una segunda opinión y solo puedo estar agradecida con ella, su trato, sus explicaciones nos dejaron muy tranquilos para nuestro peque, nos ha dado tratamiento y además ayuda en todo momento transmitiéndonos ternura además de conocimientos. Solo puedo darle las gracias.</p>
+          <p class="review-text clamped">Fuimos a Laura para una segunda opinión y solo puedo estar agradecida con ella, su trato, sus explicaciones nos dejaron muy tranquilos para nuestro peque, nos ha dado tratamiento y además ayuda en todo momento transmitiéndonos ternura además de conocimientos. Solo puedo darle las gracias.</p>
         </div>
 
         <div class="review-card">
@@ -862,7 +887,7 @@
             <span class="review-stars">★★★★★</span>
             <span class="review-time">hace 4 días</span>
           </div>
-          <p class="review-text">Gracias a Laura Marín, podóloga de la clínica, por su simpatía, calidad humana y profesionalidad. Hemos pasado por allí varios miembros de la familia y no podemos estar más contentos. Lo recomendaría una y otra vez.</p>
+          <p class="review-text clamped">Gracias a Laura Marín, podóloga de la clínica, por su simpatía, calidad humana y profesionalidad. Hemos pasado por allí varios miembros de la familia y no podemos estar más contentos. Lo recomendaría una y otra vez.</p>
         </div>
 
         <div class="review-card">
@@ -877,7 +902,7 @@
             <span class="review-stars">★★★★★</span>
             <span class="review-time">ayer <span class="review-tag">Nuevo</span></span>
           </div>
-          <p class="review-text">Contraté el servicio online de Laura de asesoramiento de calzado para viajar a Japón. Venía de un viaje de 5 días a Nueva York en el que sufrí fascitis plantar y tenía un miedo horrible a que me volviera a ocurrir en los 15 días en Japón. Laura me preparó una guía y me asesoró en el calzado que debería llevar. De no ser por ella... hubiese estado jodido. Me compré unas zapatillas perfectas, me mandó una guía de cómo cuidar mis pies y qué ejercicios hacer si sentía dolor. Impresionante. Gracias Laura!</p>
+          <p class="review-text clamped">Contraté el servicio online de Laura de asesoramiento de calzado para viajar a Japón. Venía de un viaje de 5 días a Nueva York en el que sufrí fascitis plantar y tenía un miedo horrible a que me volviera a ocurrir en los 15 días en Japón. Laura me preparó una guía y me asesoró en el calzado que debería llevar. De no ser por ella... hubiese estado jodido. Me compré unas zapatillas perfectas, me mandó una guía de cómo cuidar mis pies y qué ejercicios hacer si sentía dolor. Impresionante. Gracias Laura!</p>
         </div>
 
       </div>
@@ -1048,6 +1073,20 @@
         answer.style.maxHeight = answer.scrollHeight + 'px';
       }
     });
+  });
+
+  document.querySelectorAll('.review-text.clamped').forEach(function (el) {
+    if (el.scrollHeight > el.clientHeight + 1) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'review-more';
+      btn.textContent = 'Leer más';
+      btn.addEventListener('click', function () {
+        var expanded = el.classList.toggle('clamped') === false;
+        btn.textContent = expanded ? 'Leer menos' : 'Leer más';
+      });
+      el.insertAdjacentElement('afterend', btn);
+    }
   });
 </script>
 
