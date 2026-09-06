@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calzado con Lógica — Elige el calzado correcto para tu familia</title>
-<meta name="description" content="Calzado con Lógica: desde la primera sesión te llevas una guía con modelos exactos y sus enlaces de compra, para ti o para tu familia, sin gastar tiempo, dinero de más ni sentir la culpa de no saber si eliges bien.">
+<title>Calzado con Lógica — Asesoramiento de calzado online con seguimiento</title>
+<meta name="description" content="Calzado con Lógica: asesoramiento de calzado online, en 2 sesiones, con seguimiento. Para adultos, para niños, o para toda la familia — sin gastar tiempo, dinero de más ni la duda de si elegiste bien.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -103,18 +103,46 @@
     padding: 64px 0 clamp(56px, 8vw, 96px);
   }
   .hero h1{
-    font-size: clamp(2.1rem, 5.2vw, 3.1rem);
+    font-size: clamp(2.2rem, 6vw, 3.6rem);
     text-align:center;
-    max-width: 780px;
-    margin: 0 auto 20px;
+    max-width: 640px;
+    margin: 0 auto 14px;
+  }
+  .hero .subtitle-strong{
+    text-align:center;
+    font-weight: 700;
+    font-size: clamp(1.1rem, 2.6vw, 1.3rem);
+    color: var(--ink);
+    max-width: 640px;
+    margin: 0 auto 6px;
   }
   .hero .subtitle{
     text-align:center;
-    font-size: clamp(1.05rem, 2.6vw, 1.25rem);
+    font-style: italic;
+    font-size: clamp(1rem, 2.4vw, 1.15rem);
     color: var(--ink-soft);
-    max-width: 640px;
+    max-width: 620px;
     margin: 0 auto;
   }
+  .hero-stats{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap: 12px;
+    max-width: 620px;
+    margin: 30px auto 0;
+  }
+  .hero-stats span{
+    background: var(--accent-light);
+    color: var(--accent-dark);
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    padding: 10px 20px;
+    border-radius: 999px;
+  }
+  .hero-stats span:nth-child(2){ background: var(--yellow-light); color: var(--yellow-dark); }
+  .hero-stats span:nth-child(3){ background: var(--lilac-light); color: var(--lilac-dark); }
   .hero-photo-frame{
     max-width: var(--maxw-wide);
     margin: 44px auto 0;
@@ -122,18 +150,47 @@
   }
   .hero-photo{
     width:100%;
-    height: clamp(260px, 42vw, 460px);
+    height: clamp(320px, 50vw, 560px);
     object-fit: cover;
-    object-position: center 18%;
+    object-position: center 30%;
     border-radius: 22px;
     box-shadow: 0 24px 54px rgba(163,93,120,0.24);
   }
+
+  /* AUDIENCE */
+  .audience-grid{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 36px;
+  }
+  @media (min-width: 700px){
+    .audience-grid{ grid-template-columns: repeat(3, 1fr); }
+  }
+  .audience-card{
+    border-radius: var(--radius);
+    padding: 28px 26px;
+    background: var(--accent-light);
+  }
+  .audience-card:nth-child(2){ background: var(--yellow-light); }
+  .audience-card:nth-child(3){ background: var(--lilac-light); }
+  .audience-card h3{
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--accent-dark);
+  }
+  .audience-card:nth-child(2) h3{ color: var(--yellow-dark); }
+  .audience-card:nth-child(3) h3{ color: var(--lilac-dark); }
+  .audience-card p{ margin:0; color: var(--ink); }
 
   /* PROBLEM */
   .quotes{
     display:grid;
     gap: 16px;
     margin-top: 36px;
+  }
+  @media (min-width: 700px){
+    .quotes{ grid-template-columns: 1fr 1fr; gap: 16px 24px; align-content:start; }
   }
   .quote{
     background: var(--white);
@@ -144,6 +201,7 @@
     font-size: 1.05rem;
     font-style: italic;
     color: var(--ink);
+    margin:0;
   }
 
   /* LEAD MAGNET */
@@ -199,7 +257,7 @@
     color: var(--ink-soft);
   }
 
-  /* ABOUT / SOBRE MÍ */
+  /* ABOUT / QUIÉN SOY */
   .about{
     background: var(--white);
   }
@@ -222,6 +280,17 @@
   }
   .about-text h2{ text-align:left; }
   .about-text .lead{ text-align:left; margin-bottom: 8px; }
+  .about-pullquote{
+    margin: 22px 0 0;
+    padding: 18px 22px;
+    border-left: 4px solid var(--lilac);
+    background: var(--lilac-light);
+    border-radius: 10px;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--lilac-dark);
+    font-size: 1.05rem;
+  }
   .about-tags{
     display:flex;
     flex-wrap:wrap;
@@ -239,42 +308,42 @@
   .about-tags span:nth-child(2){ background: var(--yellow-light); color: var(--yellow-dark); }
   .about-tags span:nth-child(3){ background: var(--accent-light); color: var(--accent-dark); }
 
-  /* SOLUTION */
-  .solution-card{
+  /* SOLUTION / VALUE TABLE */
+  .value-table{
+    margin-top: 28px;
     background: var(--white);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    padding: 36px;
-    margin-top: 28px;
     border: 1px solid var(--line);
+    overflow: hidden;
   }
-  .includes{
-    list-style: none;
-    padding: 0;
-    margin: 20px 0 0;
-    display: grid;
-    gap: 12px;
-  }
-  .includes li{
+  .value-row{
     display:flex;
-    align-items: flex-start;
-    gap: 12px;
-    font-size: 1rem;
+    justify-content:space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--line);
   }
-  .includes li::before{
-    content: "✓";
-    flex: none;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: var(--lilac-light);
-    color: var(--lilac-dark);
+  .value-row span:first-child{ color: var(--ink); }
+  .value-row span:last-child{
     font-weight: 800;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size: 0.85rem;
+    color: var(--accent-dark);
+    white-space: nowrap;
+    font-family: var(--font-display);
   }
+  .value-row.total{
+    background: var(--accent-light);
+    border-bottom: none;
+  }
+  .value-row.total span:first-child{
+    font-weight: 800;
+    color: var(--accent-dark);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+  }
+  .value-row.total span:last-child{ font-size: 1.2rem; }
 
   /* HOW IT WORKS */
   .steps{
@@ -326,6 +395,22 @@
     font-size: 1rem;
   }
   .how-note strong{ color: var(--accent-dark); }
+
+  /* CRITERIA */
+  .criteria-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 20px;
+    margin-top: 36px;
+  }
+  .criteria-grid figure{ margin:0; }
+  .criteria-grid img{
+    width:100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 12px 28px rgba(163,93,120,0.16);
+  }
 
   /* GALLERY */
   .gallery-grid{
@@ -624,25 +709,75 @@
   }
   .price-family strong{ color: var(--accent-dark); }
 
-  /* GUARANTEE */
+  /* GUARANTEE + PLAZAS */
+  .guarantee-grid{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 28px;
+  }
+  @media (min-width: 700px){
+    .guarantee-grid{ grid-template-columns: 1fr 1fr; }
+  }
   .guarantee-box{
-    max-width: 680px;
-    margin: 24px auto 0;
     background: var(--lilac-light);
     border-radius: var(--radius);
-    padding: 32px;
-    text-align:center;
+    padding: 30px 28px;
   }
-  .guarantee-box .badge{
-    width:56px;height:56px;
-    border-radius:50%;
-    background: var(--accent);
-    color:#fff;
-    display:flex;align-items:center;justify-content:center;
-    font-size:1.6rem;
-    margin: 0 auto 16px;
+  .guarantee-box.pink{ background: var(--accent-light); }
+  .guarantee-box .eyebrow{ background: rgba(255,255,255,0.6); }
+  .guarantee-box h3{
+    font-size: 1.15rem;
+    color: var(--lilac-dark);
+    margin: 0 0 8px;
   }
-  .guarantee-box p{ font-size: 1.05rem; color: var(--ink); margin:0; }
+  .guarantee-box.pink h3{ color: var(--accent-dark); }
+  .guarantee-box p{ margin:0; color: var(--ink); }
+
+  /* CONDITIONS */
+  .conditions-grid{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 36px;
+  }
+  @media (min-width: 700px){
+    .conditions-grid{ grid-template-columns: 1fr 1fr; }
+  }
+  .conditions-card{
+    border-radius: var(--radius);
+    padding: 28px 26px;
+    border: 1px solid var(--line);
+  }
+  .conditions-card.yes{ background: var(--lilac-light); border-color: transparent; }
+  .conditions-card.no{ background: var(--accent-light); border-color: transparent; }
+  .conditions-card h3{
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+  }
+  .conditions-card.yes h3{ color: var(--lilac-dark); }
+  .conditions-card.no h3{ color: var(--accent-dark); }
+  .conditions-card ul{
+    list-style: none;
+    margin:0; padding:0;
+    display:grid;
+    gap: 12px;
+  }
+  .conditions-card li{
+    display:flex;
+    gap: 10px;
+    align-items:flex-start;
+    color: var(--ink);
+  }
+  .conditions-card li::before{
+    flex: none;
+    font-weight: 800;
+    margin-top: 1px;
+  }
+  .conditions-card.yes li::before{ content: "✓"; color: var(--lilac-dark); }
+  .conditions-card.no li::before{ content: "✕"; color: var(--accent-dark); }
 
   /* FAQ */
   .faq-list{
@@ -743,6 +878,7 @@
     .step::before{ left:14px; top:18px; }
     .price-box{ padding: 30px 20px; }
     .gallery-grid{ grid-auto-rows: 200px; }
+    .value-row{ flex-direction:column; gap: 4px; }
   }
 </style>
 </head>
@@ -750,22 +886,55 @@
 
   <header class="hero">
     <div class="wrap">
-      <span class="eyebrow hero-badge">Al cuidador de la familia</span>
-      <h1>Calzado con Lógica: desde la primera sesión te llevas una guía con modelos exactos y sus enlaces de compra, para ti o para tu familia</h1>
-      <p class="subtitle">Sin gastar tiempo, dinero de más ni sentir la culpa de no saber si eliges bien.</p>
+      <span class="eyebrow hero-badge center-block">Asesoramiento de calzado online</span>
+      <h1>Calzado con Lógica</h1>
+      <p class="subtitle-strong">Asesoramiento de calzado online, en 2 sesiones, con seguimiento.</p>
+      <p class="subtitle">Para adultos, para niños, o para toda la familia junta.</p>
+      <div class="hero-stats">
+        <span>2 sesiones</span>
+        <span>200€ lanzamiento</span>
+        <span>12 plazas</span>
+      </div>
     </div>
     <div class="hero-photo-frame">
-      <img class="hero-photo" src="img/laura-consulta-nino.jpg" alt="Laura valorando el pie de un peque en consulta, con la madre presente">
+      <img class="hero-photo" src="img/laura-sandalia-adulto.jpg" alt="Laura mostrando un calzado fisiológico de adulto en consulta">
     </div>
   </header>
 
+  <section id="para-quien">
+    <div class="wrap">
+      <span class="eyebrow center-block">Antes de nada</span>
+      <h2>¿Para quién es Calzado con Lógica?</h2>
+      <p class="lead center">Un asesoramiento de calzado online, en 2 sesiones — no es solo para niños.</p>
+      <div class="audience-grid">
+        <div class="audience-card">
+          <h3>Para ti</h3>
+          <p>Si eres tú quien necesita renovar su calzado con criterio clínico, no por moda.</p>
+        </div>
+        <div class="audience-card">
+          <h3>Para tus hijos</h3>
+          <p>Si quieres saber elegir el calzado que acompaña bien su desarrollo, en cada etapa.</p>
+        </div>
+        <div class="audience-card">
+          <h3>Para toda la familia</h3>
+          <p>Podéis hacerlo juntos, en la misma sesión — cuidaros como equipo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="problema">
     <div class="wrap">
-      <h2>¿Te suena esto?</h2>
+      <span class="eyebrow center-block">¿Te suena?</span>
+      <h2>Esto va de ti si alguna de estas frases es tuya</h2>
       <div class="quotes">
-        <div class="quote">"No sabes qué zapato comprarle a tu hijo."</div>
-        <div class="quote">"El pediatra te dice que ya se corregirá."</div>
-        <div class="quote">"Los abuelos dicen que el pie bien sujeto y con unas buenas plantillas."</div>
+        <div class="quote">"No sé qué zapato comprarle a mi hijo."</div>
+        <div class="quote">"He empezado a hacer deporte y no sé cuál comprarme."</div>
+        <div class="quote">"El pediatra me dice que ya se corregirá con la edad."</div>
+        <div class="quote">"Siempre estoy lesionándome, pero nunca me han hablado de calzado."</div>
+        <div class="quote">"Estoy en la zapatería mirando dos modelos, sin saber cuál le va a hacer más libre."</div>
+        <div class="quote">"Llevo plantillas, o llevé, pero nadie me dijo qué zapato era el que me tenía que poner."</div>
+        <div class="quote">"Sigo llevando yo el mismo calzado de siempre, sin pararme a pensar si a mí también me está pasando factura."</div>
       </div>
     </div>
   </section>
@@ -773,7 +942,7 @@
   <section class="leadmagnet" id="guia-gratis">
     <div class="wrap">
       <div class="leadmagnet-card">
-        <span class="eyebrow">Guía gratuita</span>
+        <span class="eyebrow">Guía gratuita para familias</span>
         <h2>¿En qué etapa está el pie de tu hijo?</h2>
         <p class="lead">Antes de comprarle otro zapato, descubre qué necesita su pie ahora mismo — según la etapa exacta de su desarrollo, no según su edad en años.</p>
         <div class="leadmagnet-stages">
@@ -787,15 +956,16 @@
     </div>
   </section>
 
-  <section id="sobre-mi" class="about">
+  <section id="quien-soy" class="about">
     <div class="wrap about-grid">
       <div class="about-photo">
         <img src="img/laura-pizarra.jpg" alt="Laura explicando en una pizarra la diferencia entre calzado convencional y calzado fisiológico">
       </div>
       <div class="about-text">
-        <span class="eyebrow">La creencia que hay que romper</span>
-        <h2>No todo se arregla con plantillas</h2>
-        <p class="lead">El calzado adecuado no es una recomendación puntual ni un accesorio que "corrige" solo. Es un criterio que tienes que aprender a aplicar tú, cada vez que compras un par nuevo.</p>
+        <span class="eyebrow">Quién soy</span>
+        <h2>Laura Marín, Podóloga de Familia</h2>
+        <p class="lead">Acompaño a adultos, niños y familias para que dejen de dudar y elijan el calzado con criterio clínico, no por moda. No recomiendo nada que no haya testeado yo misma.</p>
+        <div class="about-pullquote">"Acompaño para que no llegues a la herida, y si llegas, no camines solo."</div>
         <div class="about-tags">
           <span>Criterio clínico</span>
           <span>Cercanía real</span>
@@ -808,17 +978,15 @@
   <section id="solucion">
     <div class="wrap">
       <h2>La solución: Calzado con Lógica</h2>
-      <p class="lead center">2 sesiones conmigo y un informe personalizado, para que sepas elegir — para siempre — el calzado que le viene bien a cada miembro de tu familia. Para tus hijos, para ti, o para todos juntos.</p>
-      <div class="solution-card">
-        <h3 style="margin-bottom:4px;">Qué incluye</h3>
-        <ul class="includes">
-          <li>2 sesiones por videollamada, con toda la familia junta si lo necesitáis.</li>
-          <li>Reconstrucción de la historia del pie de cada persona: pisada, herencia, perfil sensorial y necesidades reales.</li>
-          <li>Los criterios clínicos para elegir cualquier calzado — no solo una marca puntual.</li>
-          <li>Una guía personalizada con marcas y modelos concretos, con enlaces listos para comprar.</li>
-          <li>Segunda sesión de revisión con el calzado ya en uso, para comprobar la adaptación.</li>
-          <li>Acompañamiento entre sesiones: dudas, fotos, vídeos y ejercicios según lo que necesite tu caso.</li>
-        </ul>
+      <p class="lead center">2 sesiones conmigo y un informe personalizado, para que sepas elegir — para siempre — el calzado que te viene bien a ti, a tus hijos, o a toda tu familia.</p>
+      <div class="value-table">
+        <div class="value-row"><span>Sesión 1 · historia del pie + criterios clínicos personalizados</span><span>90€</span></div>
+        <div class="value-row"><span>Guía personalizada con modelos exactos y enlaces directos de compra</span><span>80€</span></div>
+        <div class="value-row"><span>Sesión 2 · revisión con el calzado ya en uso</span><span>90€</span></div>
+        <div class="value-row"><span>Acompañamiento por mensaje entre sesiones (dudas, fotos, vídeos)</span><span>40€</span></div>
+        <div class="value-row"><span>Informe personalizado completo</span><span>50€</span></div>
+        <div class="value-row"><span>Garantía de devolución si no encontramos calzado adecuado</span><span>incluido</span></div>
+        <div class="value-row total"><span>Valor total</span><span>350€</span></div>
       </div>
     </div>
   </section>
@@ -837,7 +1005,7 @@
         </div>
         <div class="step">
           <h3>Planteamos la transición sin prisa</h3>
-          <p>Del calzado convencional a uno que libere los pies, con opciones en todos los rangos de precio, sin alterar vuestra rutina familiar.</p>
+          <p>Del calzado convencional a uno que libere los pies, con opciones en todos los rangos de precio, sin alterar vuestra rutina.</p>
         </div>
         <div class="step">
           <h3>Te llega tu guía personalizada</h3>
@@ -853,7 +1021,26 @@
         </div>
       </div>
       <div class="how-note">
-        <strong>Esto no es una guía de calzados y marcas y punto.</strong> Es entender de verdad cómo se forma y se cuida el pie, para que elegir calzado deje de costaros trabajo en el futuro — con criterio, sabiendo el porqué de cada necesidad.
+        <strong>Esto no es una guía de calzados y marcas y punto.</strong> Es entender de verdad cómo se forma y se cuida el pie, para que elegir calzado deje de costarte trabajo en el futuro — con criterio, sabiendo el porqué de cada necesidad.
+      </div>
+    </div>
+  </section>
+
+  <section id="mi-criterio">
+    <div class="wrap">
+      <span class="eyebrow center-block">Mi criterio</span>
+      <h2>Solo recomiendo lo que he testeado yo misma</h2>
+      <p class="lead center">Deportivo, urbano, de vestir — cada modelo que aparece en tu guía ha pasado antes por mis manos.</p>
+      <div class="criteria-grid">
+        <figure>
+          <img src="img/laura-zapatilla-adulto.jpg" alt="Laura mostrando una zapatilla deportiva de adulto">
+        </figure>
+        <figure>
+          <img src="img/laura-alpargata-adulto.jpg" alt="Laura mostrando una alpargata de calzado fisiológico">
+        </figure>
+        <figure>
+          <img src="img/laura-sandalia-adulto-2.jpg" alt="Laura mostrando una sandalia de vestir de calzado fisiológico">
+        </figure>
       </div>
     </div>
   </section>
@@ -888,18 +1075,18 @@
 
   <section id="testimonios">
     <div class="wrap">
-      <h2>Familias que ya han dejado de dudar</h2>
+      <h2>Quienes ya han dejado de dudar</h2>
       <p class="social-subhead">Reseñas reales de Google y conversaciones con pacientes, tal cual las escribieron.</p>
 
       <div class="stats-row">
         <div class="stat-card">
           <div class="stat-num">19.000</div>
-          <div class="stat-label">familias siguen sus consejos de calzado y salud en Instagram</div>
+          <div class="stat-label">personas siguen sus consejos de calzado y salud en Instagram</div>
           <a class="stat-join-btn ig" href="https://www.instagram.com/podological" target="_blank" rel="noopener">Ver perfil</a>
         </div>
         <div class="stat-card">
           <div class="stat-num">236</div>
-          <div class="stat-label">familias en "Caminando Juntos", su comunidad de WhatsApp, interesadas por los pies de sus hijos</div>
+          <div class="stat-label">personas en "Caminando Juntos", su comunidad de WhatsApp sobre calzado y salud del pie</div>
           <a class="stat-join-btn" href="https://chat.whatsapp.com/Fgq0SAD9DCk6g6YnJhN7FZ" target="_blank" rel="noopener">Unirme a la comunidad</a>
         </div>
         <div class="stat-card">
@@ -1020,27 +1207,60 @@
     <div class="wrap">
       <h2>Inversión</h2>
       <div class="price-box">
-        <span class="price-note">Precio de lanzamiento por tiempo limitado — plazas limitadas por tanda</span>
+        <span class="price-note">Precio de lanzamiento por tiempo limitado · 12 plazas en esta tanda</span>
         <div class="price-tag"><span class="price-was">350€</span> 200€ <span>/ programa completo</span></div>
         <p style="color:var(--ink-soft); margin-top:8px;">2 sesiones + informe personalizado + acompañamiento entre sesiones</p>
         <div class="price-family">
           <strong>Calzado con Lógica en familia:</strong> si vais a participar varios miembros de la familia en la misma sesión, cada persona adicional suma +50€ — todos en la misma reunión, sin citas por separado.
         </div>
         <div class="price-reasons">
-          <p><strong>No es una guía genérica de internet</strong> con "aquí tienes una lista y suerte". Es un plan hecho para vuestro pie concreto, con seguimiento real de que la elección fue la correcta.</p>
-          <p><strong>Precio de lanzamiento por tiempo limitado:</strong> el programa tiene un valor real de 350€. Por ser de las primeras familias en confiar en él, entráis a 200€ — un precio que no se va a repetir. Plazas limitadas por tanda, además: el acompañamiento cercano no es compatible con atender a veinte familias a la vez.</p>
-          <p><strong>Lo que os ahorráis:</strong> plantillas que se repiten cada año, calzado mal comprado una y otra vez "a ciegas", posibles sesiones de fisioterapia el día de mañana por dolores que se pudieron evitar a tiempo. 200€ frente a eso es una cifra pequeña.</p>
+          <p><strong>No es una guía genérica de internet</strong> con "aquí tienes una lista y suerte". Es un plan hecho para tu pie concreto, con seguimiento real de que la elección fue la correcta.</p>
+          <p><strong>Precio de lanzamiento por tiempo limitado:</strong> el programa tiene un valor real de 350€. Por ser de las primeras personas en confiar en él, entras a 200€ — un precio que no se va a repetir. Plazas limitadas por tanda, además: el acompañamiento cercano no es compatible con atender a veinte personas a la vez.</p>
+          <p><strong>Lo que te ahorras:</strong> plantillas que se repiten cada año, calzado mal comprado una y otra vez "a ciegas", posibles sesiones de fisioterapia el día de mañana por dolores que se pudieron evitar a tiempo. 200€ frente a eso es una cifra pequeña.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="garantia" class="guarantee">
+  <section id="garantia">
     <div class="wrap">
-      <h2>Garantía</h2>
-      <div class="guarantee-box">
-        <div class="badge">✓</div>
-        <p>Si completas las 2 sesiones y las tareas entre medias, y no encontramos juntos un calzado adecuado para tu familia, te devuelvo el dinero.</p>
+      <h2>Plazas y garantía</h2>
+      <div class="guarantee-grid">
+        <div class="guarantee-box">
+          <span class="eyebrow" style="color:var(--lilac-dark);">Plazas</span>
+          <h3>12 plazas en esta tanda</h3>
+          <p>El acompañamiento cercano no es compatible con atender a veinte personas a la vez. Son 12, y no una más.</p>
+        </div>
+        <div class="guarantee-box pink">
+          <span class="eyebrow">Garantía</span>
+          <h3>Respondo de mi parte</h3>
+          <p>Si completas las 2 sesiones y las tareas, y no encontramos un calzado adecuado, te devuelvo el dinero.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="condiciones">
+    <div class="wrap">
+      <span class="eyebrow center-block">Las condiciones</span>
+      <h2>Es para ti si... / No es para ti si...</h2>
+      <div class="conditions-grid">
+        <div class="conditions-card yes">
+          <h3>Es para ti si...</h3>
+          <ul>
+            <li>Eres adulto, tienes hijos, o queréis hacerlo en familia.</li>
+            <li>Quieres decidir con criterio clínico, no siguiendo una moda.</li>
+            <li>Puedes dedicar 2 sesiones y hacer las tareas entre medias.</li>
+          </ul>
+        </div>
+        <div class="conditions-card no">
+          <h3>No es para ti si...</h3>
+          <ul>
+            <li>Buscas que te diga una marca y ya está, sin implicarte.</li>
+            <li>No tienes intención real de cambiar de calzado.</li>
+            <li>Tienes una patología ya diagnosticada que necesita tratamiento presencial — en ese caso, te derivo.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -1052,7 +1272,7 @@
 
         <div class="faq-item">
           <button class="faq-question" type="button">
-            <span>¿Puedo hacerlo solo para mí, sin mis hijos?</span>
+            <span>¿Puedo hacerlo solo para mí, sin hijos ni familia?</span>
             <span class="icon">+</span>
           </button>
           <div class="faq-answer"><p>Sí. El programa funciona igual si vienes tú solo, si venís tú y tus hijos, o toda la familia junta.</p></div>
@@ -1068,7 +1288,7 @@
 
         <div class="faq-item">
           <button class="faq-question" type="button">
-            <span>¿Y si mi hijo (o yo) ya usa plantillas?</span>
+            <span>¿Y si ya uso plantillas?</span>
             <span class="icon">+</span>
           </button>
           <div class="faq-answer"><p>Buscamos el calzado adaptado a la patología o tratamiento actual, según la edad y la historia clínica. No sustituyo a tu podólogo si hay tratamiento en curso, trabajo en la misma dirección.</p></div>
@@ -1084,18 +1304,18 @@
 
         <div class="faq-item">
           <button class="faq-question" type="button">
-            <span>¿Cómo valoras el pie de mi hijo a distancia, sin verlo en persona?</span>
+            <span>¿Cómo valoras el pie a distancia, sin verlo en persona?</span>
             <span class="icon">+</span>
           </button>
-          <div class="faq-answer"><p>A través de tres cosas: la historia del pie (cómo pisa, qué ha heredado, qué te preocupa a ti), fotos y vídeos que me mandáis siguiendo mis indicaciones — de pie, en apoyo, caminando — y la conversación en la sesión, donde te voy preguntando y observando en directo por videollamada. No es lo mismo que tenerlo delante en consulta, y te lo digo con honestidad: si en algún momento detecto algo que necesita exploración física o una prueba que no puedo hacer a distancia, te lo diré y te derivaré a valoración presencial. Pero para lo que trabajamos aquí — criterio de elección de calzado, patrón de pisada, desarrollo del pie — la evaluación visual guiada es suficiente, y es el mismo método que ya uso con familias de fuera de España.</p></div>
+          <div class="faq-answer"><p>A través de tres cosas: la historia del pie (cómo pisa, qué ha heredado, qué te preocupa), fotos y vídeos que me mandáis siguiendo mis indicaciones — de pie, en apoyo, caminando — y la conversación en la sesión, donde te voy preguntando y observando en directo por videollamada. No es lo mismo que tenerlo delante en consulta, y te lo digo con honestidad: si en algún momento detecto algo que necesita exploración física o una prueba que no puedo hacer a distancia, te lo diré y te derivaré a valoración presencial. Pero para lo que trabajamos aquí — criterio de elección de calzado, patrón de pisada, desarrollo del pie — la evaluación visual guiada es suficiente, y es el mismo método que ya uso con personas de fuera de España.</p></div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question" type="button">
-            <span>¿Y si el calzado que elegimos no le viene bien?</span>
+            <span>¿Y si el calzado que elegimos no viene bien?</span>
             <span class="icon">+</span>
           </button>
-          <div class="faq-answer"><p>En la segunda sesión te pido que me mandes o me enseñes en directo un vídeo de tu hijo caminando con el calzado puesto — así veo si el pie se mueve con libertad dentro del zapato o si hay algo que lo está frenando. Durante el programa te doy las herramientas para que sepas medir tú misma el largo y el ancho del pie de tu hijo, de forma que no dudes a la hora de elegir el número: por delante debe sobrar entre 0,8 y 1 cm, y el ancho tiene que dejar que los dedos se muevan sin que el pie se deslice hacia la puntera al caminar. Son comprobaciones que aprendes a hacer tú, para repetirlas cada vez que le compres calzado sin necesidad de mí. Si algo no encaja — le queda grande, pequeño, o el modelo no es el que su pie necesita — lo detectamos ahí y buscamos juntos la alternativa correcta. Y si al final del proceso no damos con el calzado adecuado, entra la garantía: te devuelvo el dinero.</p></div>
+          <div class="faq-answer"><p>En la segunda sesión te pido que me mandes o me enseñes en directo un vídeo caminando con el calzado puesto — así veo si el pie se mueve con libertad dentro del zapato o si hay algo que lo está frenando. Durante el programa te doy las herramientas para que sepas medir tú misma el largo y el ancho del pie, de forma que no dudes a la hora de elegir el número: por delante debe sobrar entre 0,8 y 1 cm, y el ancho tiene que dejar que los dedos se muevan sin que el pie se deslice hacia la puntera al caminar. Son comprobaciones que aprendes a hacer tú, para repetirlas cada vez que compres calzado sin necesidad de mí. Si algo no encaja — queda grande, pequeño, o el modelo no es el que el pie necesita — lo detectamos ahí y buscamos juntos la alternativa correcta. Y si al final del proceso no damos con el calzado adecuado, entra la garantía: te devuelvo el dinero.</p></div>
         </div>
 
       </div>
@@ -1104,12 +1324,12 @@
 
   <section class="cta" id="reserva">
     <div class="wrap">
-      <h2>Deja de dudar cada vez que tienes que comprarle zapatos</h2>
+      <h2>Deja de dudar cada vez que tienes que comprar zapatos</h2>
       <p class="lead">Reserva tu plaza y en la primera sesión ya tendrás tu guía personalizada.</p>
       <a class="cta-btn" href="https://wa.me/34633898063" target="_blank" rel="noopener">
         RESERVA PLAZA
       </a>
-      <div class="cta-note">Plazas limitadas por tanda. Te responderé por WhatsApp.</div>
+      <div class="cta-note">12 plazas por tanda. Te responderé por WhatsApp.</div>
     </div>
   </section>
 
